@@ -6,6 +6,7 @@ import com.tzm.springcloud.authserver.model.Role;
 import com.tzm.springcloud.authserver.model.User;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -16,7 +17,7 @@ import org.springframework.stereotype.Service;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-@Service
+@Service("customUserDetailService")
 @Slf4j
 public class CustomUserDetailService implements UserDetailsService {
 
