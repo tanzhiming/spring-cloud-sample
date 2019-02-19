@@ -27,3 +27,16 @@ Authorization:
 
 注意，此处需加 Authorization 请求头，值为 Basic xxx xxx 为 client_id:client_secret 的 base64编码。
 
+
+密码方式
+
+http://localhost:8000/oauth/token?client_id=test_client&client_secret=123456&grant_type=password&username=tzm01&password=123456
+
+检查token
+
+http://localhost:8000/oauth/check_token?token=4f53731b-15b5-4c66-add0-a322e5a97d22
+
+刷新token
+http://localhost:8000/oauth/token?grant_type=refresh_token&refresh_token=fbde81ee-f419-42b1-1234-9191f1f95be9&client_id=demoClientId&client_secret=demoClientSecret
+
+
