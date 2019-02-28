@@ -9,22 +9,26 @@ server:
   port: 3000
 
 
+
+
 zuul:
   routes:
     resource:
       path: /resource/**
-      url: http://localhost:8080/
+      url: http://localhost:8080/resource
     user:
       path: /user/**
-      url: http://localhost:8000/user
+      url: http://localhost:8000/uaa/user
 
 security:
   oauth2:
     client:
-      accessTokenUri: http://localhost:8000/oauth/token
-      userAuthorizationUri: http://localhost:8000/oauth/authorize
       clientId: ui1
       clientSecret: ui1-secret
+      accessTokenUri: http://localhost:8000/uaa/oauth/token
+      userAuthorizationUri: http://localhost:8000/uaa/oauth/authorize
+      use-current-uri: false
     resource:
-      userInfoUri: http://localhost:8000/user
+      userInfoUri: http://localhost:8000/uaa/user
       preferTokenInfo: false
+debug: true
